@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Longevity Larder — a functional food apothecary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Albert+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#16221d;        /* cabinet interior */
+    --deep-2:#1d2c25;      /* panel */
+    --shelf:#2a3a32;       /* shelf green */
+    --shelf-edge:#0f1813;
+    --bone:#ece3d2;        /* linen / primary on dark */
+    --bone-dim:#b9b29f;    /* muted bone */
+    --brass:#c39a52;       /* the luxury signal */
+    --brass-soft:#d8b574;
+    --sage:#9cab8f;
+    --berry:#8a3a4f;
+    --ink:#1b2823;         /* text on bone cards */
+    --glass:rgba(236,227,210,.10);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #21342b 0%, var(--deep) 55%, #101a15 100%);
+    color:var(--bone);
+    font-family:"Albert Sans",system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:64px 0 26px;text-align:center;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--brass);margin:0 0 22px;
+  }
+  .hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-weight:500;
+    font-size:clamp(52px,11vw,116px);
+    line-height:.92;letter-spacing:-.01em;
+    margin:0;color:var(--bone);
+  }
+  .hero h1 em{font-style:italic;color:var(--brass-soft);}
+  .thesis{
+    font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:clamp(18px,2.4vw,23px);color:var(--bone-dim);
+    max-width:560px;margin:22px auto 0;font-weight:400;
+  }
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);
+    max-width:280px;margin:34px auto 0;opacity:.7;}
+
+  /* ---------- Search ---------- */
+  .seek{margin:40px auto 8px;max-width:540px;}
+  .seek-label{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--sage);display:block;margin-bottom:12px;text-align:center;
+  }
+  .seek-row{display:flex;gap:10px;align-items:stretch;}
+  .seek input{
+    flex:1;background:var(--glass);border:1px solid rgba(195,154,82,.4);
+    border-radius:2px;color:var(--bone);padding:14px 16px;
+    font-family:"Cormorant Garamond",serif;font-size:21px;
+    outline:none;transition:border-color .2s,background .2s;
+  }
+  .seek input::placeholder{color:var(--bone-dim);font-style:italic;opacity:.7;}
+  .seek input:focus{border-color:var(--brass);background:rgba(236,227,210,.14);}
+  .seek button{
+    background:var(--brass);color:var(--deep);border:none;border-radius:2px;
+    padding:0 22px;font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-weight:500;
+    transition:background .2s,transform .1s;
+  }
+  .seek button:hover{background:var(--brass-soft);}
+  .seek button:active{transform:translateY(1px);}
+  .seek button:disabled{opacity:.5;cursor:wait;}
+
+  /* ---------- Shelves ---------- */
+  main{padding:18px 0 40px;}
+  .shelf-block{margin-top:52px;}
+  .shelf-head{display:flex;align-items:baseline;gap:14px;margin:0 0 6px;}
+  .shelf-head h2{
+    font-family:"Cormorant Garamond",serif;font-weight:500;font-style:italic;
+    font-size:clamp(22px,3vw,30px);color:var(--bone);margin:0;white-space:nowrap;
+  }
+  .shelf-head .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--brass);
+  }
+  .shelf-head .line{flex:1;height:1px;background:rgba(195,154,82,.28);}
+
+  .shelf{
+    position:relative;display:flex;flex-wrap:wrap;gap:8px 4px;
+    padding:26px 18px 0;border-radius:4px 4px 0 0;
+    background:linear-gradient(180deg,rgba(42,58,50,.0),rgba(42,58,50,.35));
+  }
+  .shelf::after{ /* the physical shelf board */
+    content:"";position:absolute;left:0;right:0;bottom:0;height:14px;
+    background:linear-gradient(180deg,var(--shelf) 0%,var(--shelf-edge) 100%);
+    border-radius:2px;box-shadow:0 10px 22px -10px rgba(0,0,0,.7);
+  }
+
+  /* ---------- Jar ---------- */
+  .jar{
+    position:relative;width:108px;padding:0 0 22px;margin:0 6px;
+    background:none;border:none;cursor:pointer;color:inherit;
+    display:flex;flex-direction:column;align-items:center;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1);
+  }
+  .jar:hover,.jar:focus-visible{transform:translateY(-8px);outline:none;}
+  .jar .lid{
+    width:52px;height:13px;border-radius:4px 4px 2px 2px;
+    background:linear-gradient(180deg,var(--brass-soft),var(--brass));
+    box-shadow:inset 0 -2px 2px rgba(0,0,0,.25);z-index:3;
+  }
+  .jar .neck{width:62px;height:7px;background:rgba(236,227,210,.16);
+    border-left:1px solid rgba(255,255,255,.18);border-right:1px solid rgba(0,0,0,.18);}
+  .jar .body{
+    position:relative;width:84px;height:96px;border-radius:6px 6px 14px 14px;
+    overflow:hidden;
+    background:var(--fill,linear-gradient(180deg,#6b8f5a,#3f5a37));
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),
+               inset 12px 0 22px rgba(255,255,255,.16),
+               inset -12px 0 22px rgba(0,0,0,.28),
+               0 12px 20px -12px rgba(0,0,0,.6);
+  }
+  .jar .body::before{ /* glass shine */
+    content:"";position:absolute;top:6px;left:11px;width:14px;height:62px;
+    border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));
+    filter:blur(1px);opacity:.55;
+  }
+  .jar .label{
+    position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+    width:74px;background:var(--bone);color:var(--ink);border-radius:1px;
+    padding:5px 2px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.3);
+  }
+  .jar .label .nm{font-family:"IBM Plex Mono",monospace;font-size:9px;
+    letter-spacing:.02em;text-transform:uppercase;line-height:1.2;display:block;font-weight:500;}
+  .jar .label .ev{display:inline-block;width:5px;height:5px;border-radius:50%;margin-top:3px;}
+  .jar .cap{
+    margin-top:14px;font-family:"Cormorant Garamond",serif;font-size:17px;
+    color:var(--bone);line-height:1.05;font-weight:500;
+  }
+  .ev-strong{background:var(--sage);}
+  .ev-promising{background:var(--brass);}
+  .ev-emerging{background:var(--berry);}
+
+  /* ---------- Specimen panel ---------- */
+  .scrim{position:fixed;inset:0;background:rgba(8,14,11,.7);backdrop-filter:blur(4px);
+    opacity:0;pointer-events:none;transition:opacity .28s;z-index:40;}
+  .scrim.open{opacity:1;pointer-events:auto;}
+  .specimen{
+    position:fixed;z-index:50;top:50%;left:50%;transform:translate(-50%,-46%) scale(.98);
+    width:min(560px,92vw);max-height:88vh;overflow:auto;
+    background:var(--bone);color:var(--ink);border-radius:6px;
+    box-shadow:0 40px 90px -20px rgba(0,0,0,.7);
+    opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+  }
+  .specimen.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+  .spec-top{display:flex;gap:16px;align-items:flex-start;padding:26px 28px 18px;
+    border-bottom:1px solid rgba(27,40,35,.14);}
+  .spec-swatch{flex:none;width:52px;height:52px;border-radius:8px;
+    background:var(--fill,#4f6f44);box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);}
+  .spec-titles{flex:1;}
+  .spec-titles h3{font-family:"Cormorant Garamond",serif;font-weight:600;
+    font-size:34px;line-height:1;margin:2px 0 4px;}
+  .spec-latin{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;
+    color:#6c6450;font-style:normal;}
+  .spec-ev{display:inline-flex;align-items:center;gap:7px;margin-top:14px;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:#5a5340;}
+  .spec-ev .dot{width:8px;height:8px;border-radius:50%;}
+  .spec-close{position:absolute;top:16px;right:18px;background:none;border:none;
+    font-size:24px;line-height:1;color:#8a8265;cursor:pointer;padding:4px;}
+  .spec-close:hover{color:var(--berry);}
+  .spec-body{padding:8px 28px 26px;}
+  .benefit{padding:18px 0;border-bottom:1px solid rgba(27,40,35,.1);}
+  .benefit:last-child{border-bottom:none;}
+  .benefit h4{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;
+    margin:0 0 5px;color:var(--ink);}
+  .benefit p{margin:0 0 9px;font-size:14.5px;color:#3d4640;font-weight:300;}
+  .benefit a{display:inline-flex;align-items:center;gap:7px;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;
+    color:var(--berry);text-decoration:none;border-bottom:1px solid rgba(138,58,79,.35);
+    padding-bottom:1px;}
+  .benefit a:hover{border-color:var(--berry);}
+  .benefit a::before{content:"❡";font-size:11px;}
+  .spec-note{margin-top:18px;padding:13px 15px;background:rgba(195,154,82,.12);
+    border-left:2px solid var(--brass);font-size:12.5px;color:#5a5340;
+    font-family:"Albert Sans";font-weight:300;}
+
+  .loading{padding:44px 28px;text-align:center;font-family:"Cormorant Garamond",serif;
+    font-style:italic;font-size:22px;color:#6c6450;}
+  .loading .dotting::after{content:"";animation:dotting 1.4s steps(4,end) infinite;}
+  @keyframes dotting{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid rgba(195,154,82,.2);margin-top:60px;padding:34px 0 60px;text-align:center;}
+  footer p{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+    color:var(--bone-dim);max-width:560px;margin:0 auto;line-height:1.9;}
+  footer .crest{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;
+    color:var(--brass);margin-bottom:14px;}
+
+  @media (max-width:560px){
+    header.hero{padding:44px 0 18px;}
+    .shelf{justify-content:center;}
+    .seek-row{flex-direction:column;}
+    .seek button{padding:13px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important;scroll-behavior:auto;}
+  }
+
+  /* ---------- Search states ---------- */
+  .jar.dim{opacity:.16;filter:saturate(.4);pointer-events:none;}
+  .shelf-block.hidden{display:none;}
+  .seek-clear{
+    display:none;background:none;border:none;cursor:pointer;margin:12px auto 0;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--bone-dim);
+  }
+  .seek-clear.show{display:block;}
+  .seek-clear:hover{color:var(--brass);}
+
+  /* ---------- Curate toggle (footer) ---------- */
+  .curate-toggle{
+    background:none;border:none;cursor:pointer;margin-top:18px;
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:rgba(185,178,159,.5);transition:color .2s;
+  }
+  .curate-toggle:hover{color:var(--brass);}
+
+  /* ---------- Edit mode: jars ---------- */
+  .jar-tools{
+    position:absolute;top:-6px;right:-2px;display:none;gap:4px;z-index:5;
+  }
+  body.editing .jar-tools{display:flex;}
+  .jar-tools button{
+    width:22px;height:22px;border-radius:50%;border:1px solid rgba(8,14,11,.25);
+    cursor:pointer;font-size:12px;line-height:1;display:grid;place-items:center;
+    background:var(--bone);color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.4);
+    transition:transform .12s,background .2s;
+  }
+  .jar-tools button:hover{transform:scale(1.12);}
+  .jar-tools .del:hover{background:var(--berry);color:var(--bone);}
+  body.editing .jar{cursor:default;}
+  body.editing .jar:hover{transform:none;}
+
+  /* add-a-jar tile */
+  .add-jar{
+    width:108px;min-height:150px;margin:0 6px;border:1px dashed rgba(195,154,82,.5);
+    border-radius:6px;background:rgba(195,154,82,.06);color:var(--brass);cursor:pointer;
+    display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;transition:background .2s,border-color .2s;
+  }
+  body.editing .add-jar{display:flex;}
+  .add-jar:hover{background:rgba(195,154,82,.14);border-color:var(--brass);}
+  .add-jar .plus{font-size:26px;font-family:"Cormorant Garamond",serif;line-height:1;}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{
+    position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(140%);
+    display:flex;align-items:center;gap:8px;z-index:45;
+    background:var(--deep-2);border:1px solid rgba(195,154,82,.35);
+    border-radius:4px;padding:10px 12px;box-shadow:0 20px 50px -16px rgba(0,0,0,.7);
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  body.editing .toolbar{transform:translateX(-50%) translateY(0);}
+  .toolbar .stat{
+    font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--sage);padding:0 8px 0 4px;
+  }
+  .toolbar button{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;cursor:pointer;border-radius:2px;padding:9px 12px;
+    border:1px solid rgba(195,154,82,.4);background:transparent;color:var(--bone);
+    transition:background .2s,color .2s;
+  }
+  .toolbar button:hover{background:rgba(195,154,82,.16);}
+  .toolbar button.primary{background:var(--brass);color:var(--deep);border-color:var(--brass);font-weight:500;}
+  .toolbar button.primary:hover{background:var(--brass-soft);}
+  .toolbar button.done{border-color:rgba(236,227,210,.25);}
+
+  /* ---------- Edit panel ---------- */
+  .edit-panel{
+    position:fixed;z-index:55;top:50%;left:50%;
+    transform:translate(-50%,-46%) scale(.98);
+    width:min(580px,94vw);max-height:90vh;overflow:auto;
+    background:var(--bone);color:var(--ink);border-radius:6px;
+    box-shadow:0 40px 90px -20px rgba(0,0,0,.7);
+    opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+  }
+  .edit-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+  .edit-head{display:flex;align-items:center;justify-content:space-between;
+    padding:22px 28px 14px;border-bottom:1px solid rgba(27,40,35,.14);}
+  .edit-head h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-style:italic;
+    font-size:26px;margin:0;}
+  .edit-body{padding:18px 28px 24px;}
+  .fieldrow{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
+  .field{flex:1;min-width:140px;display:flex;flex-direction:column;gap:5px;}
+  .field.full{flex-basis:100%;}
+  .field label{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:#6c6450;}
+  .field input,.field select,.field textarea{
+    border:1px solid rgba(27,40,35,.22);border-radius:2px;background:#fff;color:var(--ink);
+    padding:9px 10px;font-family:"Albert Sans",sans-serif;font-size:14px;font-weight:300;
+    outline:none;transition:border-color .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brass);}
+  .field textarea{resize:vertical;min-height:62px;line-height:1.5;}
+
+  .jar-fill-row{display:flex;align-items:center;gap:14px;}
+  .fill-preview{
+    width:46px;height:54px;border-radius:5px 5px 9px 9px;flex:none;
+    background:var(--fill,#4f6f44);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12),
+      inset 8px 0 14px rgba(255,255,255,.18),inset -8px 0 14px rgba(0,0,0,.25);
+  }
+  .swatch-pair{display:flex;gap:10px;}
+  .swatch{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}
+  .swatch span{font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:#6c6450;}
+  .swatch input[type=color]{width:46px;height:30px;border:1px solid rgba(27,40,35,.22);
+    border-radius:2px;background:#fff;padding:2px;cursor:pointer;}
+
+  .benefits-edit{margin-top:6px;}
+  .benefit-edit{border:1px solid rgba(27,40,35,.14);border-radius:4px;padding:13px 13px 4px;
+    margin-bottom:12px;position:relative;background:rgba(195,154,82,.05);}
+  .benefit-edit .rm{position:absolute;top:8px;right:10px;background:none;border:none;
+    color:#8a8265;cursor:pointer;font-size:18px;line-height:1;}
+  .benefit-edit .rm:hover{color:var(--berry);}
+  .add-benefit{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--berry);background:none;border:none;cursor:pointer;
+    padding:4px 0;}
+  .add-benefit:hover{text-decoration:underline;}
+
+  .edit-actions{display:flex;align-items:center;gap:10px;margin-top:20px;
+    padding-top:16px;border-top:1px solid rgba(27,40,35,.14);}
+  .edit-actions .spacer{flex:1;}
+  .edit-actions button{font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;
+    padding:11px 18px;border:1px solid transparent;transition:background .2s,color .2s;}
+  .btn-save{background:var(--ink);color:var(--bone);}
+  .btn-save:hover{background:#0f1813;}
+  .btn-cancel{background:none;border-color:rgba(27,40,35,.25);color:var(--ink);}
+  .btn-cancel:hover{background:rgba(27,40,35,.06);}
+  .btn-del{background:none;border:none;color:var(--berry);padding:11px 4px;}
+  .btn-del:hover{text-decoration:underline;}
+  .err{color:var(--berry);font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.06em;margin-right:6px;}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">A Functional Food Apothecary</p>
+      <h1>The Longevity<br><em>Larder</em></h1>
+      <p class="thesis">A curated cabinet of foods worth keeping — opened jar by jar, read by the evidence rather than the marketing.</p>
+      <div class="rule"></div>
+
+      <div class="seek">
+        <span class="seek-label">Search the larder · find a food on the shelves</span>
+        <div class="seek-row">
+          <input id="q" type="text" placeholder="try “salmon”, “turmeric”, “walnuts”…" autocomplete="off" />
+          <button id="ask">Search</button>
+        </div>
+        <button class="seek-clear" id="seekClear">Clear · show every jar</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="shelves"></main>
+
+  <footer class="wrap">
+    <p class="crest">℞ &nbsp; per cibum, vita &nbsp; ℞</p>
+    <p>The Longevity Larder is an educational project. Nothing here is medical or dietary advice, evidence ratings are a reading of the current literature, not a verdict, and every claim is a starting point for your own research. Always consult a qualified professional before changing your diet.</p>
+  </footer>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="specimen" id="specimen" role="dialog" aria-modal="true" aria-labelledby="specName"></div>
+
+  <!-- ============================================================
+       THE LARDER'S CONTENTS — this is the whole database.
+       Edit it in the browser via "curate the larder", then
+       "Publish" to download an updated copy of this page.
+       ============================================================ -->
+
+<script>
+/* ====================================================================
+   THE LONGEVITY LARDER  —  public, read-only.
+   Contents are loaded from larder.json. There is no editor here.
+   To change what's on the shelves, edit larder.json and republish.
+==================================================================== */
+let SHELVES = [];
+
+const EV_LABEL = {strong:"Well-established evidence", promising:"Promising evidence", emerging:"Emerging / mixed evidence"};
+const EV_CLASS = {strong:"ev-strong", promising:"ev-promising", emerging:"ev-emerging"};
+
+const shelvesEl = document.getElementById("shelves");
+const scrim = document.getElementById("scrim");
+const panel = document.getElementById("specimen");
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+
+/* ---------- render the shelves ---------- */
+function render(){
+  shelvesEl.innerHTML = "";
+  SHELVES.forEach((shelf)=>{
+    const block = document.createElement("section");
+    block.className = "shelf-block";
+    block.innerHTML = `<div class="shelf-head">
+        <h2>${esc(shelf.title)}</h2><span class="tag">${esc(shelf.tag||"")}</span><span class="line"></span>
+      </div><div class="shelf"></div>`;
+    const row = block.querySelector(".shelf");
+    shelf.items.forEach((it)=>{
+      const jar = document.createElement("button");
+      jar.className = "jar";
+      jar.dataset.name = (it.name||"").toLowerCase();
+      jar.dataset.latin = (it.latin||"").toLowerCase();
+      jar.setAttribute("aria-label", `Open ${it.name}`);
+      jar.innerHTML = `
+        <span class="lid"></span><span class="neck"></span>
+        <span class="body" style="--fill:${esc(it.fill||'')}">
+          <span class="label"><span class="nm">${esc(it.name)}</span>
+          <span class="ev ${EV_CLASS[it.ev]||''}"></span></span>
+        </span>
+        <span class="cap">${esc(it.name)}</span>`;
+      jar.addEventListener("click", ()=> openSpecimen(it));
+      row.appendChild(jar);
+    });
+    shelvesEl.appendChild(block);
+  });
+  if(currentQuery) applyFilter(currentQuery);
+}
+
+/* ---------- specimen (read) panel ---------- */
+function closeSpecimen(){ scrim.classList.remove("open"); panel.classList.remove("open"); }
+scrim.addEventListener("click", closeSpecimen);
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeSpecimen(); });
+
+function benefitHTML(b){
+  const ref = b.ref && b.ref.u ? `<a href="${esc(b.ref.u)}" target="_blank" rel="noopener">${esc(b.ref.s||'Source')}</a>` : "";
+  return `<div class="benefit"><h4>${esc(b.h)}</h4><p>${esc(b.p)}</p>${ref}</div>`;
+}
+function openSpecimen(it){
+  panel.innerHTML = `
+    <button class="spec-close" aria-label="Close">×</button>
+    <div class="spec-top">
+      <div class="spec-swatch" style="--fill:${esc(it.fill||'')}"></div>
+      <div class="spec-titles">
+        <h3 id="specName">${esc(it.name)}</h3>
+        <div class="spec-latin">${esc(it.latin||"")}</div>
+        <div class="spec-ev"><span class="dot ${EV_CLASS[it.ev]||''}"></span>${EV_LABEL[it.ev]||""}</div>
+      </div>
+    </div>
+    <div class="spec-body">
+      ${(it.benefits||[]).map(benefitHTML).join("")}
+      ${it.note?`<div class="spec-note">${esc(it.note)}</div>`:""}
+    </div>`;
+  panel.querySelector(".spec-close").addEventListener("click", closeSpecimen);
+  scrim.classList.add("open"); panel.classList.add("open"); panel.scrollTop = 0;
+}
+function openNotFound(term){
+  panel.innerHTML = `
+    <button class="spec-close" aria-label="Close">×</button>
+    <div class="spec-body" style="padding:40px 30px;">
+      <div class="spec-ev" style="margin:0 0 12px;"><span class="dot ev-emerging"></span>Not on the shelves yet</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;margin:0 0 12px;line-height:1.05;">“${esc(term)}”</h3>
+      <p style="font-size:14.5px;color:#3d4640;font-weight:300;margin:0;">This one is still being researched by the Longevity Larder. The cabinet grows as I read — check back, and it may have a jar of its own before long.</p>
+    </div>`;
+  panel.querySelector(".spec-close").addEventListener("click", closeSpecimen);
+  scrim.classList.add("open"); panel.classList.add("open"); panel.scrollTop = 0;
+}
+
+/* ---------- search (word-prefix match) ---------- */
+const qEl = document.getElementById("q");
+const askBtn = document.getElementById("ask");
+const seekClear = document.getElementById("seekClear");
+let currentQuery = "";
+
+function prefixMatch(text, q){
+  if(!q) return true;
+  return String(text||"").split(/[^a-z0-9]+/i).some(w=> w.toLowerCase().startsWith(q));
+}
+function itemHit(it, q){ return prefixMatch(it.name, q) || prefixMatch(it.latin, q); }
+function matchCount(q){ let n=0; SHELVES.forEach(s=>s.items.forEach(it=>{ if(itemHit(it,q)) n++; })); return n; }
+
+function applyFilter(q){
+  currentQuery = q;
+  shelvesEl.querySelectorAll(".jar").forEach(j=>{
+    const hit = prefixMatch(j.dataset.name, q) || prefixMatch(j.dataset.latin, q);
+    j.classList.toggle("dim", !hit);
+  });
+  shelvesEl.querySelectorAll(".shelf-block").forEach(block=>{
+    const anyHit = !q || [...block.querySelectorAll(".jar")].some(j=>!j.classList.contains("dim"));
+    block.classList.toggle("hidden", !!q && !anyHit);
+  });
+  seekClear.classList.toggle("show", !!q);
+}
+function clearSearch(){ qEl.value=""; currentQuery=""; applyFilter(""); }
+
+qEl.addEventListener("input", ()=> applyFilter(qEl.value.trim().toLowerCase()));
+seekClear.addEventListener("click", clearSearch);
+
+function runSearch(){
+  const q = qEl.value.trim(); if(!q) return;
+  const ql = q.toLowerCase();
+  if(matchCount(ql)===0){ openNotFound(q); return; }
+  applyFilter(ql);
+  const hits = [];
+  SHELVES.forEach(s=>s.items.forEach(it=>{ if(itemHit(it,ql)) hits.push(it); }));
+  if(hits.length===1){ openSpecimen(hits[0]); }
+  else { const first = shelvesEl.querySelector(".jar:not(.dim)"); if(first) first.scrollIntoView({behavior:"smooth", block:"center"}); }
+}
+askBtn.addEventListener("click", runSearch);
+qEl.addEventListener("keydown", e=>{ if(e.key==="Enter") runSearch(); });
+
+/* ---------- load the contents from larder.json ---------- */
+(async function load(){
+  try{
+    const res = await fetch("larder.json", {cache:"no-store"});
+    if(!res.ok) throw new Error("status "+res.status);
+    const data = await res.json();
+    if(!Array.isArray(data)) throw new Error("bad shape");
+    SHELVES = data;
+    render();
+  }catch(err){
+    shelvesEl.innerHTML = `<p style="font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:20px;color:var(--bone-dim);text-align:center;padding:40px 20px;">
+      The larder is momentarily out of reach. If you're opening this file straight from disk,
+      view the published site instead — the contents load over the web.</p>`;
+  }
+})();
+
+</script>
+</body>
+</html>
