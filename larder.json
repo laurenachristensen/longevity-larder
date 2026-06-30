@@ -4,7 +4,7 @@
     "tag": "fridge",
     "items": [
       {
-        "name": "Broccoli<br>Sprouts",
+        "name": "Broccoli Sprouts",
         "latin": "Brassica oleracea var. italica",
         "storage": "Cold Store",
         "fill": "linear-gradient(180deg,#7fd36b,#2e7d32)",
@@ -246,7 +246,7 @@
     "tag": "bread",
     "items": [
       {
-        "name": "Sourdough Bread",
+        "name": "Sourdough",
         "latin": "Triticum aestivum",
         "storage": "Bread Bin",
         "fill": "linear-gradient(180deg,#d8b06b,#9b6a35)",
