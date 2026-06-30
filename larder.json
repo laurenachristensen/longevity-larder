@@ -1,321 +1,257 @@
 [
   {
-    "title": "Cold Store",
-    "tag": "fridge",
-    "items": [
+    "name": "Sardines",
+    "latin": "Sardina pilchardus",
+    "storage": "Pantry Shelf",
+    "fill": "linear-gradient(180deg,#6f8da8,#394b63)",
+    "ev": "strong",
+    "benefits": [
       {
-        "name": "Broccoli Sprouts",
-        "latin": "Brassica oleracea var. italica",
-        "storage": "Cold Store",
-        "fill": "linear-gradient(180deg,#7fd36b,#2e7d32)",
-        "ev": "moderate",
-        "benefits": [
-          {
-            "h": "Activates cellular antioxidant defences",
-            "p": "Broccoli sprouts are an exceptionally rich source of glucoraphanin, which is converted into sulforaphane. Sulforaphane activates the Nrf2 pathway, supporting the body's own antioxidant and cellular defence systems against oxidative stress.",
-            "ref": {
-              "s": "National Center for Complementary and Integrative Health",
-              "u": "https://www.nccih.nih.gov/health/broccoli"
-            }
-          },
-          {
-            "h": "Supports healthy inflammatory responses",
-            "p": "Human studies suggest sulforaphane helps regulate inflammatory signalling and supports normal immune function. These effects are thought to contribute to long-term cellular resilience and healthy ageing.",
-            "ref": {
-              "s": "Nutrients",
-              "u": "https://www.mdpi.com/2072-6643/15/3/650"
-            }
-          },
-          {
-            "h": "Supports natural detoxification enzymes",
-            "p": "Sulforaphane increases the activity of phase II detoxification enzymes, helping cells process and remove potentially harmful compounds while maintaining normal cellular function.",
-            "ref": {
-              "s": "Oregon State University Linus Pauling Institute",
-              "u": "https://lpi.oregonstate.edu/mic/dietary-factors/phytochemicals/isothiocyanates"
-            }
-          }
-        ]
+        "h": "Heart-healthy omega-3s",
+        "p": "Sardines are one of the richest natural sources of the marine omega-3 fatty acids EPA and DHA. These healthy fats help maintain normal heart function and are an important part of a balanced diet.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements – Omega-3 Fatty Acids Fact Sheet",
+          "u": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        }
+      },
+      {
+        "h": "Supports bones and teeth",
+        "p": "When eaten with their soft edible bones, sardines provide highly absorbable calcium along with vitamin D and phosphorus. Together these nutrients help maintain normal bones and teeth.",
+        "ref": {
+          "s": "Harvard T.H. Chan School of Public Health – Vitamin D",
+          "u": "https://nutritionsource.hsph.harvard.edu/vitamin-d/"
+        }
+      },
+      {
+        "h": "Rich in vitamin B12 and protein",
+        "p": "Sardines provide high-quality protein for maintaining muscle, alongside exceptionally high amounts of vitamin B12, which supports normal energy metabolism, nervous system function and healthy red blood cell formation.",
+        "ref": {
+          "s": "Eating more sardines instead of fish oil supplementation: Beyond omega-3 polyunsaturated fatty acids – PubMed",
+          "u": "https://pubmed.ncbi.nlm.nih.gov/37143475/"
+        }
       }
     ]
   },
   {
-    "title": "Dry Goods",
-    "tag": "staples",
-    "items": [
+    "name": "Sage",
+    "latin": "Salvia officinalis",
+    "storage": "Herb Garden",
+    "fill": "linear-gradient(180deg,#8fae73,#4f6b43)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Hemp Seeds",
-        "latin": "Cannabis sativa",
-        "storage": "Dry Goods",
-        "fill": "linear-gradient(180deg,#b6c98b,#6f8a4d)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Heart-healthy unsaturated fats",
-            "p": "Rich in polyunsaturated fats, including linoleic acid and alpha-linolenic acid, which can help support healthy blood lipid profiles when they replace saturated fats as part of a balanced diet.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/healthy-living/article/fats-and-fatty-acids"
-            }
-          },
-          {
-            "h": "Complete plant protein",
-            "p": "Provides all nine essential amino acids, making hemp seeds a valuable source of plant protein for maintaining muscle mass, tissue repair and healthy ageing.",
-            "ref": {
-              "s": "British Nutrition Foundation",
-              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/protein/"
-            }
-          },
-          {
-            "h": "Magnesium, zinc and vitamin E",
-            "p": "A concentrated source of minerals and vitamin E that contribute to normal muscle and nerve function, immune health and protection of cells from oxidative stress.",
-            "ref": {
-              "s": "NIH Office of Dietary Supplements",
-              "u": "https://ods.od.nih.gov/factsheets/"
-            }
-          }
-        ]
+        "h": "Rich in antioxidant compounds",
+        "p": "Sage naturally contains polyphenols, including rosmarinic acid and flavonoids, which help protect cells from oxidative stress. These plant compounds contribute to the herb's nutritional value alongside its vitamins and minerals.",
+        "ref": {
+          "s": "European Food Information Council (EUFIC)",
+          "u": "https://www.eufic.org/en/whats-in-food/article/polyphenols"
+        }
+      },
+      {
+        "h": "Supports normal blood clotting",
+        "p": "Fresh sage is a good source of vitamin K, a nutrient needed for normal blood clotting and the maintenance of healthy bones. Even small amounts can contribute to dietary vitamin K intake.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements",
+          "u": "https://ods.od.nih.gov/factsheets/VitaminK-Consumer/"
+        }
+      },
+      {
+        "h": "Provides manganese",
+        "p": "Sage naturally provides manganese, an essential trace mineral that contributes to normal energy metabolism, the formation of connective tissue and the maintenance of healthy bones as part of a varied diet.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements",
+          "u": "https://ods.od.nih.gov/factsheets/Manganese-Consumer/"
+        }
       }
     ]
   },
   {
-    "title": "Spice Rack",
-    "tag": "spices",
-    "items": [
+    "name": "Broccoli Sprouts",
+    "latin": "Brassica oleracea var. italica",
+    "storage": "Cold Store",
+    "fill": "linear-gradient(180deg,#8fd16a,#3f7f3d)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Cinnamon",
-        "latin": "Cinnamomum verum",
-        "storage": "Spice Rack",
-        "fill": "linear-gradient(180deg,#b97a56,#6f3f26)",
-        "ev": "moderate",
-        "benefits": [
-          {
-            "h": "Rich in protective polyphenols",
-            "p": "Cinnamon contains polyphenols with antioxidant activity that help protect cells from oxidative stress. These compounds contribute to the spice's overall health-promoting properties when consumed as part of a balanced diet.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/healthy-living/article/herbs-and-spices"
-            }
-          },
-          {
-            "h": "Supports healthy blood sugar",
-            "p": "Human studies suggest cinnamon may modestly improve fasting blood glucose and insulin sensitivity, particularly in people with impaired glucose regulation. Effects are generally small and should complement, not replace, healthy dietary habits.",
-            "ref": {
-              "s": "Allen RW et al. (2013) Systematic Review & Meta-analysis",
-              "u": "https://pubmed.ncbi.nlm.nih.gov/24019277/"
-            }
-          },
-          {
-            "h": "May support heart health",
-            "p": "Meta-analyses suggest cinnamon may produce modest improvements in triglycerides and total cholesterol in some populations. The evidence is promising but remains less consistent than for established dietary approaches.",
-            "ref": {
-              "s": "Haghighatdoost F et al. (2019) Meta-analysis",
-              "u": "https://pubmed.ncbi.nlm.nih.gov/31485353/"
-            }
-          }
-        ]
+        "h": "Sulforaphane & cell protection",
+        "p": "Broccoli sprouts are exceptionally rich in glucoraphanin, which is converted into sulforaphane when the sprouts are chopped or chewed. Sulforaphane helps protect cells from oxidative stress by supporting the body's natural defence systems.",
+        "ref": {
+          "s": "Frontiers in Nutrition",
+          "u": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2021.648788/full"
+        }
+      },
+      {
+        "h": "Vitamin C for immunity",
+        "p": "Broccoli sprouts naturally provide vitamin C, which contributes to the normal function of the immune system while also supporting normal collagen formation and helping protect cells from oxidative stress.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements – Vitamin C Fact Sheet",
+          "u": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/"
+        }
+      },
+      {
+        "h": "Folate for healthy growth",
+        "p": "Broccoli sprouts provide folate, an essential B vitamin that contributes to normal blood formation, healthy cell division and normal tissue growth during pregnancy.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements – Folate Fact Sheet",
+          "u": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+        }
       }
     ]
   },
   {
-    "title": "Herb Garden",
-    "tag": "herbs",
-    "items": [
+    "name": "Hemp seed",
+    "latin": "Cannabis sativa",
+    "storage": "Dry Goods",
+    "fill": "linear-gradient(180deg,#c8b07a,#8b6b3f)",
+    "ev": "strong",
+    "benefits": [
       {
-        "name": "Sage",
-        "latin": "Salvia officinalis",
-        "storage": "Herb Garden",
-        "fill": "linear-gradient(180deg,#8aa37a,#4f6b4d)",
-        "ev": "moderate",
-        "benefits": [
-          {
-            "h": "Rich in antioxidant compounds",
-            "p": "Sage provides polyphenols, including rosmarinic acid and flavonoids, which help protect cells from oxidative stress. These antioxidant compounds contribute to the body's normal defence against everyday oxidative damage.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/whats-in-food/article/polyphenols-in-food"
-            }
-          },
-          {
-            "h": "Supports normal brain function",
-            "p": "Human studies suggest sage extracts may support aspects of memory and attention, although evidence is still limited and appears to depend on the preparation and dose used.",
-            "ref": {
-              "s": "Kennedy DO et al. (2006)",
-              "u": "https://pubmed.ncbi.nlm.nih.gov/16531174/"
-            }
-          },
-          {
-            "h": "Provides vitamin K",
-            "p": "Sage contains vitamin K, which contributes to normal blood clotting and the maintenance of healthy bones. Although typically consumed in small amounts, it can contribute to overall dietary intake.",
-            "ref": {
-              "s": "NIH Office of Dietary Supplements – Vitamin K",
-              "u": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
-            }
-          }
-        ]
+        "h": "Heart-healthy fats",
+        "p": "Hemp seeds are naturally rich in unsaturated fats, including omega-3 and omega-6 fatty acids. These essential fats help maintain normal heart function as part of a balanced diet and contribute to overall cardiovascular health.",
+        "ref": {
+          "s": "NHS — Facts about fat",
+          "u": "https://www.nhs.uk/live-well/eat-well/food-types/different-fats-nutrition/"
+        }
+      },
+      {
+        "h": "Complete plant protein",
+        "p": "Hemp seeds provide high-quality plant protein containing all essential amino acids. Protein contributes to the maintenance of muscle mass and normal bones, making hemp seeds a nutritious addition to plant-based diets.",
+        "ref": {
+          "s": "European Food Information Council (EUFIC) — Plant-based protein: all you need to know to get enough of it",
+          "u": "https://www.eufic.org/en/whats-in-food/article/plant-based-protein-all-you-need-to-know-to-get-enough-of-it"
+        }
+      },
+      {
+        "h": "Magnesium & phosphorus",
+        "p": "Hemp seeds are an excellent source of magnesium and phosphorus. Magnesium supports normal muscle and nervous system function, while both minerals contribute to normal energy metabolism and the maintenance of healthy bones.",
+        "ref": {
+          "s": "European Food Safety Authority (EFSA) — Dietary reference values for magnesium and phosphorus",
+          "u": "https://www.efsa.europa.eu/en/press/news/150728"
+        }
       }
     ]
   },
   {
-    "title": "Pantry Shelf",
-    "tag": "pantry",
-    "items": [
+    "name": "Cinnamon",
+    "latin": "Cinnamomum verum",
+    "storage": "Spice Rack",
+    "fill": "linear-gradient(180deg,#b87a4a,#6f4327)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Sardines",
-        "latin": "Sardina pilchardus",
-        "storage": "Pantry Shelf",
-        "fill": "linear-gradient(180deg,#6f8fa6,#384b59)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Long-chain omega-3s (EPA & DHA)",
-            "p": "A rich source of marine omega-3 fatty acids, which have consistently been associated with cardiovascular health and normal brain function in human studies. Sardines provide substantial amounts of EPA and DHA in a small serving.",
-            "ref": {
-              "s": "Harvard T.H. Chan School of Public Health",
-              "u": "https://nutritionsource.hsph.harvard.edu/fish/"
-            }
-          },
-          {
-            "h": "High-quality protein",
-            "p": "Sardines provide complete protein containing all essential amino acids. Adequate protein intake supports maintenance of muscle mass, healthy ageing, and overall body function.",
-            "ref": {
-              "s": "British Nutrition Foundation",
-              "u": "https://www.nutrition.org.uk/"
-            }
-          },
-          {
-            "h": "Vitamin D",
-            "p": "Sardines are one of the few foods that naturally provide meaningful amounts of vitamin D. This nutrient supports calcium absorption, bone health, and normal immune function.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/vitamins-and-minerals/article/vitamin-d-functions-food-sources-deficiency-and-requirements"
-            }
-          },
-          {
-            "h": "Highly bioavailable calcium",
-            "p": "When eaten with their soft edible bones, sardines provide substantial amounts of calcium that supports normal bone and muscle function. This makes them an excellent dairy-free source of this essential mineral.",
-            "ref": {
-              "s": "NIH Office of Dietary Supplements",
-              "u": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
-            }
-          }
-        ]
+        "h": "Rich in protective polyphenols",
+        "p": "Cinnamon naturally contains polyphenols that help protect cells from oxidative stress. Used as part of a varied diet, these plant compounds contribute to the spice's antioxidant capacity.",
+        "ref": {
+          "s": "National Center for Biotechnology Information – Polyphenols: Sources and Bioavailability",
+          "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2835915/"
+        }
+      },
+      {
+        "h": "Provides manganese",
+        "p": "Cinnamon is a concentrated natural source of manganese, a trace mineral that contributes to normal energy metabolism, the maintenance of normal connective tissue and the protection of cells from oxidative stress.",
+        "ref": {
+          "s": "NIH Office of Dietary Supplements – Manganese Fact Sheet for Health Professionals",
+          "u": "https://ods.od.nih.gov/factsheets/Manganese-HealthProfessional/"
+        }
+      },
+      {
+        "h": "Supports normal glucose metabolism",
+        "p": "Cinnamon has been widely studied for its effects on glucose metabolism. As part of a balanced diet, it may help support normal blood glucose regulation, although it should not replace healthy lifestyle measures or medical treatment.",
+        "ref": {
+          "s": "Nutrients (2022) – Cinnamon as a Complementary Therapeutic Approach for Dysglycemia and Dyslipidemia Control in Type 2 Diabetes Mellitus and Metabolic Syndrome",
+          "u": "https://www.mdpi.com/2072-6643/14/13/2773"
+        }
       }
     ]
   },
   {
-    "title": "Fruit Bowl",
-    "tag": "fruit",
-    "items": [
+    "name": "Pomegranate",
+    "latin": "Punica granatum",
+    "storage": "Fruit Bowl",
+    "fill": "linear-gradient(180deg,#d94b5b,#8b1e3f)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Pomegranate",
-        "latin": "Punica granatum",
-        "storage": "Fruit Bowl",
-        "fill": "linear-gradient(180deg,#d84b5a,#7b1f2f)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Rich in protective polyphenols",
-            "p": "Pomegranate provides ellagitannins, anthocyanins and other polyphenols that help protect cells from oxidative stress. Human studies consistently show these compounds contribute to antioxidant activity and support healthy ageing.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/whats-in-food/article/polyphenols-in-food"
-            }
-          },
-          {
-            "h": "Supports heart health",
-            "p": "Its polyphenols and potassium support normal cardiovascular function. Clinical research suggests regular pomegranate consumption may help maintain healthy blood pressure and support blood vessel function as part of a balanced diet.",
-            "ref": {
-              "s": "Nutrients",
-              "u": "https://www.mdpi.com/2072-6643/13/4/1004"
-            }
-          },
-          {
-            "h": "Fibre for gut health",
-            "p": "The edible seeds provide dietary fibre, which supports digestive health, helps nourish beneficial gut bacteria and contributes to satiety while also supplying vitamin C for normal immune function.",
-            "ref": {
-              "s": "British Nutrition Foundation",
-              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/fruits-and-vegetables/"
-            }
-          }
-        ]
+        "h": "Rich in protective polyphenols",
+        "p": "Pomegranate is naturally rich in polyphenols, including punicalagins and anthocyanins. These plant compounds help protect cells from oxidative stress and contribute to the body's natural antioxidant defences as part of a healthy diet.",
+        "ref": {
+          "s": "Potent health effects of pomegranate",
+          "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4007340/"
+        }
+      },
+      {
+        "h": "Supports cardiovascular health",
+        "p": "Pomegranate provides polyphenols that help support healthy blood vessel function and contribute to cardiovascular health. Regular consumption, particularly as juice, has been shown to support normal blood pressure and vascular function in human studies.",
+        "ref": {
+          "s": "Phytotherapy Research – The effects of pomegranate consumption on blood pressure: A systematic review and meta-analysis",
+          "u": "https://onlinelibrary.wiley.com/doi/10.1002/ptr.8170"
+        }
+      },
+      {
+        "h": "Supports digestive health",
+        "p": "The edible arils provide dietary fibre, which supports healthy digestion, contributes to regular bowel function and helps nourish a healthy gut microbiome as part of a balanced diet.",
+        "ref": {
+          "s": "USDA Agricultural Research Service – Nutritive Value of Pomegranate Fruit and Juice",
+          "u": "https://www.ars.usda.gov/research/publications/publication/?seqNo115=224949"
+        }
       }
     ]
   },
   {
-    "title": "Bread Bin",
-    "tag": "bread",
-    "items": [
+    "name": "Sourdough",
+    "latin": "Triticum aestivum",
+    "storage": "Bread Bin",
+    "fill": "linear-gradient(180deg,#d9b56d,#8b5e34)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Sourdough",
-        "latin": "Triticum aestivum",
-        "storage": "Bread Bin",
-        "fill": "linear-gradient(180deg,#d8b06b,#9b6a35)",
-        "ev": "moderate",
-        "benefits": [
-          {
-            "h": "Supports glycaemic response",
-            "p": "Traditional sourdough fermentation can reduce the glycaemic impact of bread compared with some conventionally leavened breads. The effect depends on the flour used, fermentation method and final recipe.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/healthy-living/article/what-is-sourdough-bread-and-how-does-it-compare-to-regular-bread"
-            }
-          },
-          {
-            "h": "Improved mineral availability",
-            "p": "Natural fermentation reduces phytate, helping improve the bioavailability of minerals such as iron, zinc and magnesium. Wholegrain sourdough generally provides greater mineral and fibre content than refined varieties.",
-            "ref": {
-              "s": "Frontiers in Microbiology",
-              "u": "https://www.frontiersin.org/articles/10.3389/fmicb.2019.00575/full"
-            }
-          },
-          {
-            "h": "Provides fibre and energy",
-            "p": "Sourdough made with wholegrain flour provides complex carbohydrates and dietary fibre that contribute to digestive health and sustained energy intake as part of a balanced diet.",
-            "ref": {
-              "s": "British Nutrition Foundation",
-              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/starchy-foods/"
-            }
-          }
-        ]
+        "h": "Steadier blood sugar response",
+        "p": "Traditional sourdough fermentation can slow starch digestion, helping produce a smaller rise in blood glucose after meals than comparable refined breads. The effect depends on the flour used and the fermentation process.",
+        "ref": {
+          "s": "EFSA Journal",
+          "u": "https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2014.3837"
+        }
+      },
+      {
+        "h": "Improved mineral availability",
+        "p": "The natural fermentation process breaks down some phytic acid, making minerals such as iron, zinc and magnesium more available for absorption. Wholegrain sourdough provides the greatest nutritional advantage.",
+        "ref": {
+          "s": "Frontiers in Nutrition",
+          "u": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2023.1230043/full"
+        }
       }
     ]
   },
   {
-    "title": "Root Cellar",
-    "tag": "roots",
-    "items": [
+    "name": "Garlic",
+    "latin": "Allium sativum",
+    "storage": "Root Cellar",
+    "fill": "linear-gradient(180deg,#f3ede0,#c8b58a)",
+    "ev": "moderate",
+    "benefits": [
       {
-        "name": "Garlic",
-        "latin": "Allium sativum",
-        "storage": "Root Cellar",
-        "fill": "linear-gradient(180deg,#f3ead0,#c8b07a)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Supports heart health",
-            "p": "Garlic provides sulphur-containing compounds including allicin derivatives that have been associated in human studies with modest improvements in blood pressure and blood lipid levels as part of a healthy diet.",
-            "ref": {
-              "s": "Nutrients",
-              "u": "https://www.mdpi.com/2072-6643/12/9/2758"
-            }
-          },
-          {
-            "h": "Provides protective sulphur compounds",
-            "p": "Garlic is rich in organosulphur compounds that help support the body's antioxidant defences and protect cells from oxidative stress. These compounds are responsible for many of garlic's studied biological effects.",
-            "ref": {
-              "s": "European Food Information Council (EUFIC)",
-              "u": "https://www.eufic.org/en/whats-in-food/article/garlic-health-benefits-and-nutritional-information"
-            }
-          },
-          {
-            "h": "Feeds beneficial gut bacteria",
-            "p": "Garlic naturally contains prebiotic fibres such as inulin and fructooligosaccharides that nourish beneficial gut microbes, helping support a diverse and healthy gut microbiome.",
-            "ref": {
-              "s": "British Nutrition Foundation",
-              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/gut-health/"
-            }
-          }
-        ]
+        "h": "Supports heart health",
+        "p": "Garlic naturally contains organosulfur compounds such as allicin, which have been associated with supporting normal cardiovascular function. Regular garlic consumption as part of a balanced diet may contribute to maintaining healthy blood pressure and cholesterol levels.",
+        "ref": {
+          "s": "National Center for Complementary and Integrative Health (NCCIH)",
+          "u": "https://www.nccih.nih.gov/health/garlic"
+        }
+      },
+      {
+        "h": "Provides antioxidant compounds",
+        "p": "Garlic is rich in sulfur-containing phytochemicals that help protect cells from oxidative stress. Crushing or chopping garlic activates many of these naturally occurring compounds before cooking.",
+        "ref": {
+          "s": "Linus Pauling Institute, Oregon State University",
+          "u": "https://lpi.oregonstate.edu/mic/food-beverages/garlic"
+        }
+      },
+      {
+        "h": "Supports normal immune function",
+        "p": "Garlic contains naturally occurring bioactive compounds that help support normal immune responses. Although it is typically eaten in small amounts, it contributes beneficial phytochemicals alongside a varied, balanced diet.",
+        "ref": {
+          "s": "Nutrition Research Reviews",
+          "u": "https://www.cambridge.org/core/journals/nutrition-research-reviews/article/garlic-in-health-and-disease/C70F38FF67A0A21547898B2641240B8E"
+        }
       }
     ]
   }
