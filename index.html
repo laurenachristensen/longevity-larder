@@ -112,47 +112,16 @@
     border-radius:2px;box-shadow:0 10px 22px -10px rgba(0,0,0,.7);
   }
 
-  /* ---------- Jar ---------- */
+  /* ---------- Jar (SVG) ---------- */
   .jar{
-    position:relative;width:108px;padding:0 0 22px;margin:0 6px;
+    position:relative;width:122px;margin:0 4px;padding:0 0 6px;
     background:none;border:none;cursor:pointer;color:inherit;
-    display:flex;flex-direction:column;align-items:center;
+    display:flex;align-items:flex-end;justify-content:center;
     transition:transform .22s cubic-bezier(.2,.8,.2,1);
   }
   .jar:hover,.jar:focus-visible{transform:translateY(-8px);outline:none;}
-  .jar .lid{
-    width:52px;height:13px;border-radius:4px 4px 2px 2px;
-    background:linear-gradient(180deg,var(--brass-soft),var(--brass));
-    box-shadow:inset 0 -2px 2px rgba(0,0,0,.25);z-index:3;
-  }
-  .jar .neck{width:62px;height:7px;background:rgba(236,227,210,.16);
-    border-left:1px solid rgba(255,255,255,.18);border-right:1px solid rgba(0,0,0,.18);}
-  .jar .body{
-    position:relative;width:84px;height:96px;border-radius:6px 6px 14px 14px;
-    overflow:hidden;
-    background:var(--fill,linear-gradient(180deg,#6b8f5a,#3f5a37));
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),
-               inset 12px 0 22px rgba(255,255,255,.16),
-               inset -12px 0 22px rgba(0,0,0,.28),
-               0 12px 20px -12px rgba(0,0,0,.6);
-  }
-  .jar .body::before{ /* glass shine */
-    content:"";position:absolute;top:6px;left:11px;width:14px;height:62px;
-    border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0));
-    filter:blur(1px);opacity:.55;
-  }
-  .jar .label{
-    position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
-    width:74px;background:var(--bone);color:var(--ink);border-radius:1px;
-    padding:5px 2px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.3);
-  }
-  .jar .label .nm{font-family:"IBM Plex Mono",monospace;font-size:9px;
-    letter-spacing:.02em;text-transform:uppercase;line-height:1.2;display:block;font-weight:500;}
-  .jar .label .ev{display:inline-block;width:5px;height:5px;border-radius:50%;margin-top:3px;}
-  .jar .cap{
-    margin-top:14px;font-family:"Cormorant Garamond",serif;font-size:17px;
-    color:var(--bone);line-height:1.05;font-weight:500;
-  }
+  .jar svg{width:100%;height:auto;display:block;
+    filter:drop-shadow(0 14px 22px rgba(0,0,0,.42));}
   .ev-strong{background:var(--sage);}
   .ev-promising{background:var(--brass);}
   .ev-emerging{background:var(--berry);}
@@ -414,9 +383,69 @@ const panel = document.getElementById("specimen");
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
 
+/* ---------- SVG jar: geometry, contents colour, fitted label ---------- */
+const SVGNS = "http://www.w3.org/2000/svg";
+const BODY_D = "M65 54 C65 62 58 66 52 70 C42 78 40 90 40 100 L40 205 "+
+               "C40 225 55 240 75 240 L145 240 C165 240 180 225 180 205 "+
+               "L180 100 C180 90 178 78 168 70 C162 66 155 62 155 54 Z";
+let _uid = 0;
+
+function colours(fill){
+  const m = String(fill||"").match(/#([0-9a-fA-F]{3,6})/g) || [];
+  const norm = h=>{ h=h.replace('#',''); if(h.length===3) h=h.split('').map(c=>c+c).join(''); return '#'+h.slice(0,6); };
+  return [ norm(m[0]||'#8a9a6a'), norm(m[1]||m[0]||'#5d6b40') ];
+}
+
+function jarSVG(it){
+  const [c1,c2] = colours(it.fill);
+  const gid = "jg" + (_uid++);
+  return `<svg viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs>
+    <ellipse cx="110" cy="240" rx="70" ry="8" fill="#000" opacity=".08"/>
+    <path d="${BODY_D}" fill="url(#${gid})"/>
+    <path d="${BODY_D}" fill="rgba(255,255,255,.26)" stroke="#9F9A90" stroke-width="2"/>
+    <path d="M62 82 C56 95 56 190 62 214" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".40"/>
+    <ellipse cx="110" cy="228" rx="55" ry="6" fill="#fff" opacity=".20"/>
+    <rect x="48" y="18" width="124" height="28" rx="8" fill="#C6A15C"/>
+    <rect x="58" y="42" width="104" height="12" rx="4" fill="#ECE7DD" stroke="#BDB7AC" stroke-width="1.5"/>
+    <rect x="58" y="120" width="104" height="60" rx="6" fill="#F6F2E9" stroke="#D8D0C2" stroke-width="1"/>
+    <text class="lbl" text-anchor="middle" fill="#2D2A26"
+          font-family="Inter, Helvetica, Arial, sans-serif" font-weight="600"></text>
+  </svg>`;
+}
+
+const LBL_MAXW=92, LBL_CY=151, LBL_MAXF=16, LBL_MINF=8, LBL_SP=0.5;
+function _w(el,str,fs){
+  el.setAttribute("font-size",fs); el.setAttribute("letter-spacing",LBL_SP); el.textContent=str;
+  if(typeof el.getComputedTextLength==="function"){ const w=el.getComputedTextLength(); if(w) return w; }
+  return str.length*(fs*0.58+LBL_SP);
+}
+function _split(name){
+  const a=name.split(/\s+/); if(a.length===1) return [name];
+  let best=null,bs=Infinity;
+  for(let i=1;i<a.length;i++){ const x=a.slice(0,i).join(" "),y=a.slice(i).join(" ");
+    const s=Math.max(x.length,y.length); if(s<bs){bs=s;best=[x,y];} }
+  return best;
+}
+function _place(el,lines,fs){
+  el.setAttribute("font-size",fs); el.setAttribute("letter-spacing",LBL_SP); el.textContent="";
+  const lh=fs*1.14, top=LBL_CY-(lines.length*lh)/2;
+  lines.forEach((ln,i)=>{ const t=document.createElementNS(SVGNS,"tspan");
+    t.setAttribute("x",110); t.setAttribute("y",(top+lh*(i+0.5)+fs*0.34).toFixed(1));
+    t.textContent=ln; el.appendChild(t); });
+}
+function fitLabel(el,name){
+  for(let fs=LBL_MAXF;fs>=LBL_MINF;fs--){ if(_w(el,name,fs)<=LBL_MAXW){ _place(el,[name],fs); return; } }
+  const lines=_split(name);
+  for(let fs=LBL_MAXF;fs>=LBL_MINF;fs--){ if(lines.every(l=>_w(el,l,fs)<=LBL_MAXW)){ _place(el,lines,fs); return; } }
+  _place(el,lines,LBL_MINF);
+}
+
 /* ---------- render the shelves ---------- */
 function render(){
   shelvesEl.innerHTML = "";
+  const fitJobs = [];
   SHELVES.forEach((shelf)=>{
     const block = document.createElement("section");
     block.className = "shelf-block";
@@ -430,18 +459,14 @@ function render(){
       jar.dataset.name = (it.name||"").toLowerCase();
       jar.dataset.latin = (it.latin||"").toLowerCase();
       jar.setAttribute("aria-label", `Open ${it.name}`);
-      jar.innerHTML = `
-        <span class="lid"></span><span class="neck"></span>
-        <span class="body" style="--fill:${esc(it.fill||'')}">
-          <span class="label"><span class="nm">${esc(it.name)}</span>
-          <span class="ev ${EV_CLASS[it.ev]||''}"></span></span>
-        </span>
-        <span class="cap">${esc(it.name)}</span>`;
+      jar.innerHTML = jarSVG(it);
       jar.addEventListener("click", ()=> openSpecimen(it));
       row.appendChild(jar);
+      fitJobs.push([jar.querySelector(".lbl"), (it.name||"").toUpperCase()]);
     });
     shelvesEl.appendChild(block);
   });
+  fitJobs.forEach(([el,name])=> fitLabel(el, name)); // measure once in the DOM
   if(currentQuery) applyFilter(currentQuery);
 }
 
