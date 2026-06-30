@@ -4,7 +4,7 @@
     "tag": "fridge",
     "items": [
       {
-        "name": "Broccoli Sprouts",
+        "name": "Broccoli<br>Sprouts",
         "latin": "Brassica oleracea var. italica",
         "storage": "Cold Store",
         "fill": "linear-gradient(180deg,#7fd36b,#2e7d32)",
