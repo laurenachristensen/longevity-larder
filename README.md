@@ -1,6 +1,6 @@
 # The Longevity Larder
 
-A self-curated functional-food apothecary. The public site is **read-only**; the contents live in a separate data file that only the owner edits and republishes.
+A self-curated functional-food apothecary. The public site is **read-only**; the contents live in a separate data file that only the owner edits and republishes. Have fun.
 
 ## Files
 
