@@ -2,17 +2,119 @@
   {
     "title": "Cold Store",
     "tag": "fridge",
-    "items": []
+    "items": [
+      {
+        "name": "Broccoli Sprouts",
+        "latin": "Brassica oleracea var. italica",
+        "storage": "Cold Store",
+        "fill": "linear-gradient(180deg,#7fd36b,#2e7d32)",
+        "ev": "moderate",
+        "benefits": [
+          {
+            "h": "Activates cellular antioxidant defences",
+            "p": "Broccoli sprouts are an exceptionally rich source of glucoraphanin, which is converted into sulforaphane. Sulforaphane activates the Nrf2 pathway, supporting the body's own antioxidant and cellular defence systems against oxidative stress.",
+            "ref": {
+              "s": "National Center for Complementary and Integrative Health",
+              "u": "https://www.nccih.nih.gov/health/broccoli"
+            }
+          },
+          {
+            "h": "Supports healthy inflammatory responses",
+            "p": "Human studies suggest sulforaphane helps regulate inflammatory signalling and supports normal immune function. These effects are thought to contribute to long-term cellular resilience and healthy ageing.",
+            "ref": {
+              "s": "Nutrients",
+              "u": "https://www.mdpi.com/2072-6643/15/3/650"
+            }
+          },
+          {
+            "h": "Supports natural detoxification enzymes",
+            "p": "Sulforaphane increases the activity of phase II detoxification enzymes, helping cells process and remove potentially harmful compounds while maintaining normal cellular function.",
+            "ref": {
+              "s": "Oregon State University Linus Pauling Institute",
+              "u": "https://lpi.oregonstate.edu/mic/dietary-factors/phytochemicals/isothiocyanates"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Dry Goods",
     "tag": "staples",
-    "items": []
+    "items": [
+      {
+        "name": "Hemp Seeds",
+        "latin": "Cannabis sativa",
+        "storage": "Dry Goods",
+        "fill": "linear-gradient(180deg,#b6c98b,#6f8a4d)",
+        "ev": "strong",
+        "benefits": [
+          {
+            "h": "Heart-healthy unsaturated fats",
+            "p": "Rich in polyunsaturated fats, including linoleic acid and alpha-linolenic acid, which can help support healthy blood lipid profiles when they replace saturated fats as part of a balanced diet.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/healthy-living/article/fats-and-fatty-acids"
+            }
+          },
+          {
+            "h": "Complete plant protein",
+            "p": "Provides all nine essential amino acids, making hemp seeds a valuable source of plant protein for maintaining muscle mass, tissue repair and healthy ageing.",
+            "ref": {
+              "s": "British Nutrition Foundation",
+              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/protein/"
+            }
+          },
+          {
+            "h": "Magnesium, zinc and vitamin E",
+            "p": "A concentrated source of minerals and vitamin E that contribute to normal muscle and nerve function, immune health and protection of cells from oxidative stress.",
+            "ref": {
+              "s": "NIH Office of Dietary Supplements",
+              "u": "https://ods.od.nih.gov/factsheets/"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Spice Rack",
     "tag": "spices",
-    "items": []
+    "items": [
+      {
+        "name": "Cinnamon",
+        "latin": "Cinnamomum verum",
+        "storage": "Spice Rack",
+        "fill": "linear-gradient(180deg,#b97a56,#6f3f26)",
+        "ev": "moderate",
+        "benefits": [
+          {
+            "h": "Rich in protective polyphenols",
+            "p": "Cinnamon contains polyphenols with antioxidant activity that help protect cells from oxidative stress. These compounds contribute to the spice's overall health-promoting properties when consumed as part of a balanced diet.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/healthy-living/article/herbs-and-spices"
+            }
+          },
+          {
+            "h": "Supports healthy blood sugar",
+            "p": "Human studies suggest cinnamon may modestly improve fasting blood glucose and insulin sensitivity, particularly in people with impaired glucose regulation. Effects are generally small and should complement, not replace, healthy dietary habits.",
+            "ref": {
+              "s": "Allen RW et al. (2013) Systematic Review & Meta-analysis",
+              "u": "https://pubmed.ncbi.nlm.nih.gov/24019277/"
+            }
+          },
+          {
+            "h": "May support heart health",
+            "p": "Meta-analyses suggest cinnamon may produce modest improvements in triglycerides and total cholesterol in some populations. The evidence is promising but remains less consistent than for established dietary approaches.",
+            "ref": {
+              "s": "Haghighatdoost F et al. (2019) Meta-analysis",
+              "u": "https://pubmed.ncbi.nlm.nih.gov/31485353/"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Herb Garden",
@@ -103,7 +205,41 @@
   {
     "title": "Fruit Bowl",
     "tag": "fruit",
-    "items": []
+    "items": [
+      {
+        "name": "Pomegranate",
+        "latin": "Punica granatum",
+        "storage": "Fruit Bowl",
+        "fill": "linear-gradient(180deg,#d84b5a,#7b1f2f)",
+        "ev": "strong",
+        "benefits": [
+          {
+            "h": "Rich in protective polyphenols",
+            "p": "Pomegranate provides ellagitannins, anthocyanins and other polyphenols that help protect cells from oxidative stress. Human studies consistently show these compounds contribute to antioxidant activity and support healthy ageing.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/whats-in-food/article/polyphenols-in-food"
+            }
+          },
+          {
+            "h": "Supports heart health",
+            "p": "Its polyphenols and potassium support normal cardiovascular function. Clinical research suggests regular pomegranate consumption may help maintain healthy blood pressure and support blood vessel function as part of a balanced diet.",
+            "ref": {
+              "s": "Nutrients",
+              "u": "https://www.mdpi.com/2072-6643/13/4/1004"
+            }
+          },
+          {
+            "h": "Fibre for gut health",
+            "p": "The edible seeds provide dietary fibre, which supports digestive health, helps nourish beneficial gut bacteria and contributes to satiety while also supplying vitamin C for normal immune function.",
+            "ref": {
+              "s": "British Nutrition Foundation",
+              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/fruits-and-vegetables/"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Bread Bin",
@@ -147,6 +283,40 @@
   {
     "title": "Root Cellar",
     "tag": "roots",
-    "items": []
+    "items": [
+      {
+        "name": "Garlic",
+        "latin": "Allium sativum",
+        "storage": "Root Cellar",
+        "fill": "linear-gradient(180deg,#f3ead0,#c8b07a)",
+        "ev": "strong",
+        "benefits": [
+          {
+            "h": "Supports heart health",
+            "p": "Garlic provides sulphur-containing compounds including allicin derivatives that have been associated in human studies with modest improvements in blood pressure and blood lipid levels as part of a healthy diet.",
+            "ref": {
+              "s": "Nutrients",
+              "u": "https://www.mdpi.com/2072-6643/12/9/2758"
+            }
+          },
+          {
+            "h": "Provides protective sulphur compounds",
+            "p": "Garlic is rich in organosulphur compounds that help support the body's antioxidant defences and protect cells from oxidative stress. These compounds are responsible for many of garlic's studied biological effects.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/whats-in-food/article/garlic-health-benefits-and-nutritional-information"
+            }
+          },
+          {
+            "h": "Feeds beneficial gut bacteria",
+            "p": "Garlic naturally contains prebiotic fibres such as inulin and fructooligosaccharides that nourish beneficial gut microbes, helping support a diverse and healthy gut microbiome.",
+            "ref": {
+              "s": "British Nutrition Foundation",
+              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/gut-health/"
+            }
+          }
+        ]
+      }
+    ]
   }
 ]
