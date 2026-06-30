@@ -2,301 +2,31 @@
   {
     "title": "Cold Store",
     "tag": "fridge",
-    "items": [
-      {
-        "name": "Wild Salmon",
-        "latin": "Salmo salar",
-        "fill": "linear-gradient(180deg,#e08a6e,#b85c45)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Long-chain omega-3s (EPA & DHA)",
-            "p": "A reliable source of marine omega-3 fatty acids, which are linked in human trials to lower triglycerides and support cardiovascular and brain health.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/fish/"
-            }
-          },
-          {
-            "h": "High-quality protein + vitamin D",
-            "p": "Provides complete protein and is one of few natural food sources of vitamin D, which most people under-consume.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/fish/"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Kefir",
-        "latin": "lac fermentum",
-        "fill": "linear-gradient(180deg,#f2ead6,#cdbf9d)",
-        "ev": "emerging",
-        "benefits": [
-          {
-            "h": "Live probiotic cultures",
-            "p": "A fermented milk drink carrying diverse live bacteria and yeasts; probiotics show promise for gut and immune health, though strains and effects vary.",
-            "ref": {
-              "s": "NIH · Office of Dietary Supplements",
-              "u": "https://ods.od.nih.gov/factsheets/Probiotics-HealthProfessional/"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   },
   {
     "title": "Dry Goods",
     "tag": "staples",
-    "items": [
-      {
-        "name": "Walnuts",
-        "latin": "Juglans regia",
-        "fill": "linear-gradient(180deg,#b08755,#6f4f2b)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Plant omega-3 (ALA)",
-            "p": "The richest common nut source of the plant omega-3 ALA; regular nut intake is linked to better heart health and cholesterol.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/nuts-for-the-heart/"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Oats",
-        "latin": "Avena sativa",
-        "fill": "linear-gradient(180deg,#e4d6ac,#b39e6d)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Beta-glucan & cholesterol",
-            "p": "Oat beta-glucan soluble fibre is one of the few food components with an authorised health claim for lowering blood cholesterol.",
-            "ref": {
-              "s": "EFSA Health Claim",
-              "u": "https://www.efsa.europa.eu/en/efsajournal/pub/1885"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   },
   {
     "title": "Spice Rack",
     "tag": "spices",
-    "items": [
-      {
-        "name": "Turmeric",
-        "latin": "Curcuma longa",
-        "fill": "linear-gradient(180deg,#e6a23c,#b9701a)",
-        "ev": "promising",
-        "benefits": [
-          {
-            "h": "Curcumin, the active compound",
-            "p": "Curcumin shows anti-inflammatory activity in studies, though it is poorly absorbed on its own — pairing with black pepper (piperine) markedly improves uptake.",
-            "ref": {
-              "s": "NCCIH · Turmeric",
-              "u": "https://www.nccih.nih.gov/health/turmeric"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Saffron",
-        "latin": "Crocus sativus",
-        "fill": "linear-gradient(180deg,#d36a3c,#9c3d1d)",
-        "ev": "promising",
-        "benefits": [
-          {
-            "h": "Mood — small but real trials",
-            "p": "The world's costliest spice has been studied in small randomised trials for low mood, with some showing effects comparable to standard care — promising, not proven.",
-            "ref": {
-              "s": "NCCIH",
-              "u": "https://www.nccih.nih.gov/health/saffron"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Cinnamon",
-        "latin": "Cinnamomum verum",
-        "fill": "linear-gradient(180deg,#a9663b,#6f3c1f)",
-        "ev": "emerging",
-        "benefits": [
-          {
-            "h": "Blood sugar — modest & mixed",
-            "p": "Some trials hint at small effects on fasting glucose, but results are inconsistent and it is no substitute for established diabetes care.",
-            "ref": {
-              "s": "NCCIH · Cinnamon",
-              "u": "https://www.nccih.nih.gov/health/cinnamon"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   },
   {
     "title": "Pantry Shelf",
     "tag": "pantry",
-    "items": [
-      {
-        "name": "Extra-Virgin Olive Oil",
-        "latin": "Olea europaea",
-        "fill": "linear-gradient(180deg,#c9b24a,#8c7320)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "The Mediterranean cornerstone",
-            "p": "In the PREDIMED trial, a Mediterranean diet rich in extra-virgin olive oil reduced major cardiovascular events versus a control diet.",
-            "ref": {
-              "s": "PREDIMED · NEJM",
-              "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa1800389"
-            }
-          },
-          {
-            "h": "Polyphenols & oleic acid",
-            "p": "Carries oleocanthal and other polyphenols with anti-inflammatory activity, alongside heart-friendly monounsaturated fat.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/food-features/olive-oil/"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Dark Cacao",
-        "latin": "Theobroma cacao",
-        "fill": "linear-gradient(180deg,#6b4a36,#3a241a)",
-        "ev": "emerging",
-        "benefits": [
-          {
-            "h": "Cocoa flavanols",
-            "p": "Cocoa flavanols have been studied for effects on blood-vessel function and blood pressure — but benefits sit with the cacao, not the sugar and fat of most chocolate.",
-            "ref": {
-              "s": "Linus Pauling Institute",
-              "u": "https://lpi.oregonstate.edu/mic/food-beverages/cocoa-chocolate"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Green Tea",
-        "latin": "Camellia sinensis",
-        "fill": "linear-gradient(180deg,#8fa85a,#566b30)",
-        "ev": "promising",
-        "benefits": [
-          {
-            "h": "Catechins (EGCG) & L-theanine",
-            "p": "Provides catechin polyphenols plus L-theanine; observational data link regular green-tea drinking with cardiovascular benefit.",
-            "ref": {
-              "s": "Linus Pauling Institute",
-              "u": "https://lpi.oregonstate.edu/mic/food-beverages/tea"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Manuka Honey",
-        "latin": "Leptospermum mel",
-        "fill": "linear-gradient(180deg,#caa14a,#8f6a23)",
-        "ev": "emerging",
-        "benefits": [
-          {
-            "h": "Topical antibacterial action",
-            "p": "Its evidence is strongest applied to the skin — medical-grade manuka is used in wound care; claims about eating it for internal health are far weaker.",
-            "ref": {
-              "s": "NCCIH · Honey",
-              "u": "https://www.nccih.nih.gov/health/honey"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   },
   {
     "title": "Fruit Bowl",
     "tag": "fruit",
-    "items": [
-      {
-        "name": "Blueberries",
-        "latin": "Vaccinium spp.",
-        "fill": "linear-gradient(180deg,#5b6fb0,#2f3c73)",
-        "ev": "promising",
-        "benefits": [
-          {
-            "h": "Anthocyanin flavonoids",
-            "p": "The deep colour comes from anthocyanins; higher flavonoid intake is associated in cohort studies with better vascular and cognitive ageing.",
-            "ref": {
-              "s": "Linus Pauling Institute",
-              "u": "https://lpi.oregonstate.edu/mic/dietary-factors/phytochemicals/flavonoids"
-            }
-          },
-          {
-            "h": "Low sugar, high fibre fruit",
-            "p": "A relatively low-glycaemic berry that delivers fibre and polyphenols without a heavy sugar load.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/food-features/blueberries/"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Pomegranate",
-        "latin": "Punica granatum",
-        "fill": "linear-gradient(180deg,#a8324a,#6e1c30)",
-        "ev": "emerging",
-        "benefits": [
-          {
-            "h": "Punicalagins & polyphenols",
-            "p": "Rich in potent antioxidant polyphenols; small trials suggest effects on blood pressure and oxidative stress, but larger evidence is still building.",
-            "ref": {
-              "s": "NCCIH",
-              "u": "https://www.nccih.nih.gov/health/pomegranate"
-            }
-          }
-        ]
-      },
-      {
-        "name": "Avocado",
-        "latin": "Persea americana",
-        "fill": "linear-gradient(180deg,#a7bf5e,#5f7a34)",
-        "ev": "promising",
-        "benefits": [
-          {
-            "h": "Monounsaturated fat + fibre",
-            "p": "A whole-food source of monounsaturated fat, potassium and fibre; associated with improved diet quality and lipid profiles.",
-            "ref": {
-              "s": "Harvard · The Nutrition Source",
-              "u": "https://nutritionsource.hsph.harvard.edu/avocados/"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   },
   {
     "title": "Root Cellar",
     "tag": "roots",
-    "items": [
-      {
-        "name": "Ginger",
-        "latin": "Zingiber officinale",
-        "fill": "linear-gradient(180deg,#dcc183,#a8884a)",
-        "ev": "strong",
-        "benefits": [
-          {
-            "h": "Nausea — the strong case",
-            "p": "Among the best-evidenced uses: ginger reduces nausea, including in pregnancy and post-operative settings, in multiple trials.",
-            "ref": {
-              "s": "NCCIH · Ginger",
-              "u": "https://www.nccih.nih.gov/health/ginger"
-            }
-          }
-        ]
-      }
-    ]
+    "items": []
   }
 ]
