@@ -28,6 +28,22 @@
         ]
       },
       {
+        "name": "Sardines",
+        "latin": "Sardina pilchardus",
+        "fill": "linear-gradient(180deg,#e08a6e,#fffbfa)",
+        "ev": "strong",
+        "benefits": [
+          {
+            "h": "Rich in omega-3s (EPA & DHA)",
+            "p": "A reliable source of marine omega-3 fatty acids, which are linked in human trials to lower triglycerides and support cardiovascular and brain health.",
+            "ref": {
+              "s": "News Medical",
+              "u": "https://www.news-medical.net/health/Why-sardines-deserve-a-spot-on-your-plate-Surprising-health-benefits-of-this-tiny-fish.aspx#9"
+            }
+          }
+        ]
+      },
+      {
         "name": "Blueberries",
         "latin": "Vaccinium spp.",
         "fill": "linear-gradient(180deg,#5b6fb0,#2f3c73)",
