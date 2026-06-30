@@ -30,15 +30,39 @@
       {
         "name": "Sardines",
         "latin": "Sardina pilchardus",
-        "fill": "linear-gradient(180deg,#e08a6e,#fffbfa)",
+        "fill": "linear-gradient(180deg,#6f8fa6,#384b59)",
         "ev": "strong",
         "benefits": [
           {
-            "h": "Rich in omega-3s (EPA & DHA)",
-            "p": "A reliable source of marine omega-3 fatty acids, which are linked in human trials to lower triglycerides and support cardiovascular and brain health.",
+            "h": "Long-chain omega-3s (EPA & DHA)",
+            "p": "A rich source of marine omega-3 fatty acids, which have consistently been associated with cardiovascular health and normal brain function in human studies. Sardines provide substantial amounts of EPA and DHA in a small serving.",
             "ref": {
-              "s": "News Medical",
-              "u": "https://www.news-medical.net/health/Why-sardines-deserve-a-spot-on-your-plate-Surprising-health-benefits-of-this-tiny-fish.aspx#9"
+              "s": "Harvard T.H. Chan School of Public Health",
+              "u": "https://nutritionsource.hsph.harvard.edu/fish/"
+            }
+          },
+          {
+            "h": "High-quality protein",
+            "p": "Sardines provide complete protein containing all essential amino acids. Adequate protein intake supports maintenance of muscle mass, healthy aging, and overall body function.",
+            "ref": {
+              "s": "Harvard T.H. Chan School of Public Health",
+              "u": "https://nutritionsource.hsph.harvard.edu/protein/"
+            }
+          },
+          {
+            "h": "Highly bioavailable calcium",
+            "p": "When eaten with their soft edible bones, sardines provide large amounts of calcium that supports normal bone and muscle function. They are an excellent dairy-free source of this essential mineral.",
+            "ref": {
+              "s": "NIH Office of Dietary Supplements",
+              "u": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+            }
+          },
+          {
+            "h": "Vitamin D",
+            "p": "Sardines naturally contain vitamin D, which helps maintain calcium balance, supports bone health, and contributes to normal immune function. Few commonly eaten foods provide meaningful amounts of vitamin D.",
+            "ref": {
+              "s": "NIH Office of Dietary Supplements",
+              "u": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
             }
           }
         ]
