@@ -15,14 +15,134 @@
     "items": []
   },
   {
+    "title": "Herb Garden",
+    "tag": "herbs",
+    "items": [
+      {
+        "name": "Sage",
+        "latin": "Salvia officinalis",
+        "storage": "Herb Garden",
+        "fill": "linear-gradient(180deg,#8aa37a,#4f6b4d)",
+        "ev": "moderate",
+        "benefits": [
+          {
+            "h": "Rich in antioxidant compounds",
+            "p": "Sage provides polyphenols, including rosmarinic acid and flavonoids, which help protect cells from oxidative stress. These antioxidant compounds contribute to the body's normal defence against everyday oxidative damage.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/whats-in-food/article/polyphenols-in-food"
+            }
+          },
+          {
+            "h": "Supports normal brain function",
+            "p": "Human studies suggest sage extracts may support aspects of memory and attention, although evidence is still limited and appears to depend on the preparation and dose used.",
+            "ref": {
+              "s": "Kennedy DO et al. (2006)",
+              "u": "https://pubmed.ncbi.nlm.nih.gov/16531174/"
+            }
+          },
+          {
+            "h": "Provides vitamin K",
+            "p": "Sage contains vitamin K, which contributes to normal blood clotting and the maintenance of healthy bones. Although typically consumed in small amounts, it can contribute to overall dietary intake.",
+            "ref": {
+              "s": "NIH Office of Dietary Supplements – Vitamin K",
+              "u": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "title": "Pantry Shelf",
     "tag": "pantry",
-    "items": []
+    "items": [
+      {
+        "name": "Sardines",
+        "latin": "Sardina pilchardus",
+        "storage": "Pantry Shelf",
+        "fill": "linear-gradient(180deg,#6f8fa6,#384b59)",
+        "ev": "strong",
+        "benefits": [
+          {
+            "h": "Long-chain omega-3s (EPA & DHA)",
+            "p": "A rich source of marine omega-3 fatty acids, which have consistently been associated with cardiovascular health and normal brain function in human studies. Sardines provide substantial amounts of EPA and DHA in a small serving.",
+            "ref": {
+              "s": "Harvard T.H. Chan School of Public Health",
+              "u": "https://nutritionsource.hsph.harvard.edu/fish/"
+            }
+          },
+          {
+            "h": "High-quality protein",
+            "p": "Sardines provide complete protein containing all essential amino acids. Adequate protein intake supports maintenance of muscle mass, healthy ageing, and overall body function.",
+            "ref": {
+              "s": "British Nutrition Foundation",
+              "u": "https://www.nutrition.org.uk/"
+            }
+          },
+          {
+            "h": "Vitamin D",
+            "p": "Sardines are one of the few foods that naturally provide meaningful amounts of vitamin D. This nutrient supports calcium absorption, bone health, and normal immune function.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/vitamins-and-minerals/article/vitamin-d-functions-food-sources-deficiency-and-requirements"
+            }
+          },
+          {
+            "h": "Highly bioavailable calcium",
+            "p": "When eaten with their soft edible bones, sardines provide substantial amounts of calcium that supports normal bone and muscle function. This makes them an excellent dairy-free source of this essential mineral.",
+            "ref": {
+              "s": "NIH Office of Dietary Supplements",
+              "u": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Fruit Bowl",
     "tag": "fruit",
     "items": []
+  },
+  {
+    "title": "Bread Bin",
+    "tag": "bread",
+    "items": [
+      {
+        "name": "Sourdough Bread",
+        "latin": "Triticum aestivum",
+        "storage": "Bread Bin",
+        "fill": "linear-gradient(180deg,#d8b06b,#9b6a35)",
+        "ev": "moderate",
+        "benefits": [
+          {
+            "h": "Supports glycaemic response",
+            "p": "Traditional sourdough fermentation can reduce the glycaemic impact of bread compared with some conventionally leavened breads. The effect depends on the flour used, fermentation method and final recipe.",
+            "ref": {
+              "s": "European Food Information Council (EUFIC)",
+              "u": "https://www.eufic.org/en/healthy-living/article/what-is-sourdough-bread-and-how-does-it-compare-to-regular-bread"
+            }
+          },
+          {
+            "h": "Improved mineral availability",
+            "p": "Natural fermentation reduces phytate, helping improve the bioavailability of minerals such as iron, zinc and magnesium. Wholegrain sourdough generally provides greater mineral and fibre content than refined varieties.",
+            "ref": {
+              "s": "Frontiers in Microbiology",
+              "u": "https://www.frontiersin.org/articles/10.3389/fmicb.2019.00575/full"
+            }
+          },
+          {
+            "h": "Provides fibre and energy",
+            "p": "Sourdough made with wholegrain flour provides complex carbohydrates and dietary fibre that contribute to digestive health and sustained energy intake as part of a balanced diet.",
+            "ref": {
+              "s": "British Nutrition Foundation",
+              "u": "https://www.nutrition.org.uk/healthy-sustainable-diets/starchy-foods/"
+            }
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "Root Cellar",
