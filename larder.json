@@ -6,6 +6,8 @@
       {
         "name": "Broccoli Sprouts",
         "latin": "Brassica oleracea var. italica",
+        "nutrition": "https://fdc.nal.usda.gov/food-details/595815/nutrients",
+        "about": "Broccoli sprouts can be eaten raw by adding them to salads, smoothies, sandwiches, or as a soup garnish. They can also be cooked by steaming, sautéing, or stir-frying. While there is no recommended daily intake, they are generally considered safe to eat in any amount.",
         "fill": "linear-gradient(180deg,#8fd16a,#3f7f3d)",
         "ev": "moderate",
         "benefits": [
